@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{fragments/layout}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<script
+	src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="/js/datatable.js"></script>
+<title>Index</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<div class="container">
+			<h2>Listagem Colaboradores</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						        <th>NOME</th>
+						        <th>SOBRENOME</th>
+						        <th>CPF</th>
+						        <th>RG</th>
+						        <th>NOME MÃE</th>
+						        <th>NOME PAI</th>
+						        <th>Nº PIS</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="colaborador : ${colaboradores}">
+						<td th:text="${colaborador.nome}"></td>
+						<td th:text="${colaborador.sobrenome}"></td>
+						<td th:text="${colaborador.cpf}"></td>
+						<td th:text="${colaborador.rg}"></td>
+						<td th:text="${colaborador.nomeMae}"></td>
+						<td th:text="${colaborador.nomePai}"></td>
+						<td th:text="${colaborador.pis}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!--    <h1>Listagem de Colaboradores</h1> -->
+
+		<!--     <table> -->
+		<!--       <tr> -->
+		<!--         <th>NAME</th> -->
+		<!--         <th>SOBRENOME</th> -->
+		<!--         <th>CPF</th> -->
+		<!--         <th>RG</th> -->
+		<!--         <th>NOME MÃE</th> -->
+		<!--         <th>NOME PAI</th> -->
+		<!--         <th>Nº PIS</th> -->
+		<!--       </tr> -->
+		<!--       <tr th:each="colaborador : ${colaboradores}"> -->
+		<!--          <td th:text="${colaborador.nome}"></td> -->
+		<!--          <td th:text="${colaborador.sobrenome}"></td> -->
+		<!--          <td th:text="${colaborador.cpf}"></td> -->
+		<!--          <td th:text="${colaborador.rg}"></td> -->
+		<!--          <td th:text="${colaborador.nomeMae}"></td> -->
+		<!--          <td th:text="${colaborador.nomePai}"></td> -->
+		<!--          <td th:text="${colaborador.pis}"></td> -->
+		<!--       </tr> -->
+		<!--     </table>   -->
+	</div>
+</body>
+</html>
